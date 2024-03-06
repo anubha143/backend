@@ -1,9 +1,8 @@
 const { MongoClient } = require("mongodb");
+require("dotenv").config();
+const url = process.env.MONGO_URL;
 
-const MONGO_URL =
-  "mongodb+srv://products:Products123@cluster0.36vu86s.mongodb.net";
-
-const client = new MongoClient(MONGO_URL, {
+const client = new MongoClient(url, {
   appName: "products",
   maxPoolSize: 20,
   minPoolSize: 5,
